@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsapiworkflow
+  labels:
+    app: jsapiworkflow
+  namespace: namespace-workflow-1700070265308
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jsapiworkflow
+  template:
+    metadata:
+      labels:
+        app: jsapiworkflow
+    spec:
+      containers:
+        - name: jsapiworkflow
+          image: acrworkflow1700070265308.azurecr.io/image-workflow-1700070265308:latest
+          ports:
+            - containerPort: 3000
