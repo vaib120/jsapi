@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jsapiworkflow
+  namespace: namespace-workflow-1700070265308
+spec:
+  type: LoadBalancer
+  selector:
+    app: jsapiworkflow
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
